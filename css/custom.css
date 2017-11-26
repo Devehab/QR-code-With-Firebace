@@ -1,0 +1,92 @@
+ html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    padding: 0px;
+    margin: 0px;
+  }
+
+.qrcode{
+  text-align: center;
+      margin: 28px 0px;
+}
+.qrcode i{
+text-align: center;
+font-size: 50px;
+color: #333;
+}
+
+#result{
+    margin-top: 50px;
+  text-align: center;
+}
+body{
+  background: #E6E5E5;
+  padding: 0px;
+  margin: 0px;
+}
+
+.social_icon  ul {font-size: 18px;text-align: center;margin-top: 31px;margin-bottom: 20px;}
+
+.social_icon  ul i{
+  font-size: 24px;
+  margin: 15px;
+  color: #fff;
+}
+.social_icon  ul i:hover{
+  color: #333;
+}
+
+.footer{
+    /* margin-bottom: 20px; */
+    background-color: #009688;
+    display: block;
+    overflow: hidden;
+}
+.footer p {
+      text-align: center;
+      margin-top: 13px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: initial;
+      margin-bottom: 30px;
+      display: block;
+      overflow: hidden;
+      position: static;
+      color: white;
+}
+
+.footer .RBK{
+
+      text-align: center;
+    margin-top: 36px;
+}
+
+
+@media only screen and (max-width: 992px){
+
+#reMobile {
+    display: block !important;
+    float: right;
+}
+
+#navStyle1  {
+float:left;
+}
+
+
+
+}
+
+
+@media only screen and (max-width: 360px){
+
+#reMobile {
+    display: block !important;
+   
+}
+
+#navStyle1  {
+display: block !important;
+}
+
+
+}

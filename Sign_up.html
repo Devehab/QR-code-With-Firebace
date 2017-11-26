@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quick QRCode - Sign UP</title>
+
+
+
+ <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+
+        
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/custom.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+ 
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDRQ8t2l7JrIqLhbv03T2J2ghZZ5aI6lO8",
+        authDomain: "qr-code-d2ecf.firebaseapp.com",
+        databaseURL: "https://qr-code-d2ecf.firebaseio.com",
+        projectId: "qr-code-d2ecf",
+        storageBucket: "qr-code-d2ecf.appspot.com",
+        messagingSenderId: "790905806378"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+
+</head>
+<body>
+
+
+   <div class="container">
+
+    <div style=" text-align: center; margin-bottom: 100px; margin-top: 63px; ">
+      <h1><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</h1>
+    </div>
+
+    <div class="row">
+
+          <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      
+     <a class="waves-effect waves-light btn" onclick="signUp()"><i class="fa fa-user-plus" aria-hidden="true"></i> Create account</a>
+     <div><p style=" color: #000000a6; font-size: 16px; padding-top: 10px; " >I've account</p>
+<a class="waves-effect waves-light btn" onclick="window.location.replace('Sign_in.html');"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
+     </div>
+    </form>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+     <div class="footer" id="footer_M">
+      <div class="RBK"> <img src="http://rbk.org/wp-content/uploads/2016/03/logo.png" height="64"> </div>
+     
+    	<div class="social_icon">
+    <ul>
+         <a href="#" target="_blank"><i class="fa fa-sign-in"></i></a>
+    	 <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+    	<a href="#" target="_blank"><i class="fa fa-facebook" target="_blank"></i></a>
+    	<a href="https://github.com/Devehab" target="_blank"><i class="fa fa-github"></i></a>
+    </ul>
+    </div>
+    <p>Made in RBK by Ehab Kahwati - 2017</p>
+    </div>
+    </body>
+
+    <script type="text/javascript">
+
+function dataSet(first_name ,last_name ) {
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  var d = new Date();
+var textDate = d.toDateString();
+ var data = { first_name: first_name , last_name: last_name  };
+
+var MyPath = firebase.database().ref("Users/" + uid + "/");
+MyPath.set(data).then(function() {
+    console.log(data);
+   window.location.replace('index.html');
+  })
+  .catch(function(error) {
+    console.log("failed: " + error.message);
+     alert (error);
+  });
+
+
+  // body...
+}
+
+      function signUp() {
+       
+var email = $('#email').val();
+var password = $('#password').val();
+var first_name = $('#first_name').val();
+var last_name = $('#last_name').val();
+
+firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+
+dataSet(first_name ,last_name );
+  
+}, function(error) {
+  console.log(' An error happened.' , error);
+ alert (error);
+
+ // $('#email').val('');
+ // $('#password').val('');
+
+});
+
+
+      }
+
+
+
+
+
+    </script>
+    <script type="text/javascript" src="js/custom-sign.js"></script>
+    </html>

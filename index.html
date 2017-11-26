@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quick QRCode</title>
+
+
+
+ <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+        
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/custom.css">
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+  
+  <!-- Latest compiled and minified CSS -->
+
+
+
+  <script type="text/javascript" src="js/canvas-toBlob.js"></script>
+  <script type="text/javascript" src="js/FileSaver.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+ 
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDRQ8t2l7JrIqLhbv03T2J2ghZZ5aI6lO8",
+        authDomain: "qr-code-d2ecf.firebaseapp.com",
+        databaseURL: "https://qr-code-d2ecf.firebaseio.com",
+        projectId: "qr-code-d2ecf",
+        storageBucket: "qr-code-d2ecf.appspot.com",
+        messagingSenderId: "790905806378"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+
+</head>
+<body>
+
+
+
+
+   <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="Setting.html"><i class="fa fa-cog" aria-hidden="true"></i> Sestting</a></li>
+  <li onclick="signOut()"><a href="#!"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a></li>
+  
+</ul>
+<nav style=" background-color: #009688; ">
+       <div class="container">
+  <div class="nav-wrapper">
+    <a href="index.html" class="brand-logo"><i class="fa fa-qrcode" aria-hidden="true"></i></a>
+    <ul class="right hide-on-med-and-down">
+      <li class="active" ><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add QR-Code</a></li>
+      <li><a href="list.html"><i class="fa fa-list-ul" aria-hidden="true"></i> List QR-Code</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">My account <i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>
+    </ul></nav>
+ 
+  </div>
+
+
+
+ <div class="container">
+
+
+
+<div class="row">
+<div class="qrcode">
+  
+  </div>
+</div>
+
+      <div class="row">
+      <div class="col s12 m6">
+      <div class="card-panel hoverable">
+      
+        <div class="input-field ">
+          <textarea id="qr-text" class="materialize-textarea"></textarea>
+          <label for="textarea1">Text Code</label>
+        </div>
+      </div></div>
+    
+
+    <div class="col s12 m6">
+    <div class="card-panel hoverable">
+  <div class="row">
+  <div class="input-field  col s12 m7">
+    <select id="selectid">
+    
+      <option value="1" selected>Small</option>
+      <option value="2" >Medium</option>
+      <option value="3">Large</option>
+    </select>
+    <label>Size Select</label>
+  </div></div>
+
+
+<div class="row">
+  <div class="col s12 m6"><a id="Save" style="margin-bottom: 10px;" class="waves-effect waves-light btn"><i class="fa fa-laptop left"></i>Save my device</a></div>
+   <div class="col s12 m6"><a id="SaveDevice" class="waves-effect waves-light btn"><i class="fa fa-cloud left"></i>Save my cloud</a></div>
+</div>
+
+
+
+     </div>
+
+   </div>
+
+  </div>
+
+
+
+
+    
+ <div class="row">
+    <div id="result">
+      
+      <div id="output" class="card-panel hoverable">
+        </div>
+      </div></div>
+
+
+
+
+ </div>
+
+     <div class="footer" id="footer_M">
+      <div class="RBK"> <img src="http://rbk.org/wp-content/uploads/2016/03/logo.png" height="64"> </div>
+     
+  <div class="social_icon">
+<ul>
+     <a href="#" target="_blank"><i class="fa fa-sign-in"></i></a>
+   <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+  <a href="#" target="_blank"><i class="fa fa-facebook" target="_blank"></i></a>
+  <a href="https://github.com/Devehab" target="_blank"><i class="fa fa-github"></i></a>
+</ul>
+</div>
+<p>Made in RBK by Ehab Kahwati - 2017</p>
+</div>
+</body>
+<script type="text/javascript" src="js/custom.js"></script>
+</html>
