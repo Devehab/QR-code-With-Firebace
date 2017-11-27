@@ -138,7 +138,14 @@ MyPath.update(data).then(function() {
 
       }
 
-
+function signOut() {
+  firebase.auth().signOut().then(function() {
+  window.location.replace('Sign_in.html');
+}, function(error) {
+  console.log(' An error happened.' , error);
+   alert (error);
+});
+}
 
 
 
